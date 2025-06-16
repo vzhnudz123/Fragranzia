@@ -10,6 +10,9 @@ import Products from './Products';
 import Cart from './Cart';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import Gift from './Gift';
+import About from './About';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +28,9 @@ root.render(
       <Route path='/signup' element={<Signup></Signup>}></Route>
       <Route path='/product' element={<Products></Products>}></Route>
       <Route path='/cart' element={<Cart></Cart>}></Route>
+      <Route path='/gifting' element={<Gift></Gift>}></Route>
+      <Route path='about' element={<About></About>}></Route>
+
       
     </Routes>
     </BrowserRouter>

@@ -407,7 +407,7 @@ const [isOpen, setIsOpen] = useState(false);
             <p className="text-sm text-green-600 font-semibold mt-1">
               {item.discount}
             </p>
-            <button className="mt-4 bg-[#004b6b] text-white px-4 py-2 rounded hover:bg-[#003548]">
+            <button onClick={()=>handleadd(item)} className="mt-4 bg-[#004b6b] text-white px-4 py-2 rounded hover:bg-[#003548]">
               Add to Cart
             </button>
           </div>
