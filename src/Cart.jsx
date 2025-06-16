@@ -45,7 +45,7 @@ const total = subtotal - discount + shipping;
                     <span className="px-3">{product.quantity}</span>
                     <button onClick={()=>dispatch(increaseQuantity(product.id))} className="px-2 py-1 border rounded text-sm">+</button>
                   </div>
-                  <p className="text-[#003b4a] font-semibold text-right">₹1800</p>
+                  <p className="text-[#003b4a] font-semibold text-right">₹{product.price}</p>
                   <button onClick={()=>dispatch(removecart(product.id))} className="text-sm text-red-500 mt-1 hover:underline">Remove</button>
                 </div>
               </div>
