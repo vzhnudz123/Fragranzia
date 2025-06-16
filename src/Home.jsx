@@ -294,8 +294,8 @@ const [isOpen, setIsOpen] = useState(false);
     Featured <span className="text-[#004b6b]">Collections</span>
   </h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {featuredCollections.map((item, index) => (
-      <div key={index} className="bg-white p-4 rounded shadow text-center">
+    {featuredCollections.map((item) => (
+      <div key={item.id} className="bg-white p-4 rounded shadow text-center">
         <img src={item.img} alt={item.name} className="mx-auto mb-2 h-64" />
         <h3 className="font-medium">{item.name}</h3>
         <p className="text-sm">{item.gender}</p>
@@ -303,7 +303,7 @@ const [isOpen, setIsOpen] = useState(false);
           ₹{item.price}{' '}
           <span className="line-through text-gray-400">₹{item.originalPrice}</span>
         </p>
-        <button onClick={()=>handleadd(featuredCollections)} className="mt-2 px-4 py-1 bg-[#003b4a] text-white rounded">
+        <button onClick={()=>handleadd(item)} className="mt-2 px-4 py-1 bg-[#003b4a] text-white rounded">
           Add to Cart
         </button>
       </div>
