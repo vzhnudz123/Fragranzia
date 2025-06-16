@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaShippingFast, FaLock, FaHeadset } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -28,7 +28,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addtocart } from './redux/cartSlice';
 import nw from './images/c89818398a15db0798bc360f86f19e117b080035.jpg'
-
+import { HiMenu, HiX } from "react-icons/hi";
 
 
 const Home = () => {
@@ -53,6 +53,8 @@ const scroll = (direction) => {
     });
   }
 };
+
+const [isOpen, setIsOpen] = useState(false);
 
 
   const categories = [
@@ -97,6 +99,27 @@ const scroll = (direction) => {
           <a href="gifting" className="hover:text-[#003b4a]">Gifting</a>
           <a href="about" className="hover:text-[#003b4a]">About</a>
         </div>
+
+         {/* Mobile menu toggle button */}
+      <button
+        className="md:hidden text-2xl"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <HiX /> : <HiMenu />}
+      </button>
+
+
+
+      {/* Mobile Menu Items */}
+      {isOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white flex flex-col items-center space-y-4 py-4 shadow-md md:hidden z-50">
+          <a href="/" className="hover:text-[#003b4a]">Home</a>
+          <a href="/product" className="hover:text-[#003b4a]">Products</a>
+          <a href="/gifting" className="hover:text-[#003b4a]">Gifting</a>
+          <a href="/about" className="hover:text-[#003b4a]">About</a>
+        </div>
+      )}
+  
 
         {/* Search + Icons */}
         <div className="flex items-center space-x-4">
